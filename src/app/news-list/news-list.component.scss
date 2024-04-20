@@ -1,0 +1,26 @@
+
+.news-list{
+    border-radius: 15px;
+    box-shadow: 0.5em 1em 0.5em 0em rgba(64, 73, 59, 0.281);
+    border: dashed 0.1rem #006b09;
+    width: 70%;
+    padding: 10px;
+    margin-left: 10px;
+  }
+
+  :host {
+    display: block;
+    margin-top: 20px; // Adjust the value as needed
+}
+
+
+  :host ::ng-deep app-header .header {
+    color: black;
+    background-color: transparent;
+    border-bottom: 1px solid #07b148;
+    font-size: 2rem;
+    padding-left: 0px;
+    
+}
+
+  
