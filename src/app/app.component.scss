@@ -1,0 +1,15 @@
+.news-list-container {
+    display: flex;
+}
+
+app-news-list:first-child {
+    flex: 7.5;
+    margin-left: 15px;
+    margin-right: 30px;
+
+}
+
+app-news-list:last-child {
+    flex: 2.5;
+    margin-right: 15px;
+}

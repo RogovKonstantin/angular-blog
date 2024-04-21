@@ -1,6 +1,11 @@
 <app-header></app-header>
-<app-news-list>
-  <app-article></app-article>
-  <app-article></app-article>
-  <app-article></app-article>
-</app-news-list>
+<div class="news-list-container">
+  <app-news-list>
+    <app-header [title]="'Записи'"></app-header>
+  </app-news-list>
+  <app-news-list>
+    <app-header [title]="'Создать запись'"></app-header>
+    
+    <app-header [title]="'Архив'"></app-header>
+  </app-news-list>
+</div>
