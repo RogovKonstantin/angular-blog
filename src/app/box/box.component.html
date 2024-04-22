@@ -1,9 +1,9 @@
 <div class="box">
     <app-header [title]="'Записи'"></app-header>
-    <div *ngFor="let article of articles">
-        <h2>{{article.title}}</h2>
-        <p>{{article.content}}</p>
-        <p><small>Author: {{article.author}}</small></p>
-        <p><small>Category: {{article.category}}</small></p>
-      </div>
+    <app-article *ngFor="let article of articles" 
+                 [title]="article.title" 
+                 [content]="article.content" 
+                 [author]="article.author" 
+                 [category]="article.category">
+    </app-article>
 </div>

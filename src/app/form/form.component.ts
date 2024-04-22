@@ -28,5 +28,6 @@ export class ArticleFormComponent {
       content: content || ''
     };
     this.newArticle.emit(articleData);
+    this.article.reset();
   }
 }
