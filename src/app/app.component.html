@@ -1,11 +1,10 @@
-<app-header></app-header>
-<div class="news-list-container">
-  <app-news-list>
-    <app-header [title]="'Записи'"></app-header>
-  </app-news-list>
-  <app-news-list>
-    <app-header [title]="'Создать запись'"></app-header>
-    
-    <app-header [title]="'Архив'"></app-header>
-  </app-news-list>
+<div class="page">
+  <app-header></app-header>
+    <div class="page-contents">
+      <div class = "main">
+        <app-box [articles]="articles"></app-box>
+  </div>
+  <div class="aside">
+    <app-box-with-form (newArticle)="onNewArticle($event)"></app-box-with-form>
+  </div>
 </div>

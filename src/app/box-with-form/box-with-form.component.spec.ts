@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewsListComponent } from './news-list.component';
+import { BoxWithFormComponent } from './box-with-form.component';
 
-describe('NewsListComponent', () => {
-  let component: NewsListComponent;
-  let fixture: ComponentFixture<NewsListComponent>;
+describe('BoxWithFormComponent', () => {
+  let component: BoxWithFormComponent;
+  let fixture: ComponentFixture<BoxWithFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NewsListComponent]
+      imports: [BoxWithFormComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(NewsListComponent);
+    fixture = TestBed.createComponent(BoxWithFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

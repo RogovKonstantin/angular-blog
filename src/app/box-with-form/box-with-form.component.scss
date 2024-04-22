@@ -1,0 +1,16 @@
+.box-with-form{
+    border-radius: 15px;
+    box-shadow: 0.5em 1em 0.5em 0em rgba(64, 73, 59, 0.281);
+    border: dashed 0.1rem #006b09;
+    padding: 10px;
+  }
+
+  
+
+  :host ::ng-deep app-header .header {
+    color: black;
+    background-color: transparent;
+    border-bottom: 5px solid #07b148;
+    font-size: 2.3rem;
+    padding-left: 0;
+}
