@@ -20,10 +20,8 @@ export class BoxWithFormComponent {
   }
 
   ngAfterViewInit() {
-    this.formComponent.newArticle.subscribe(article => this.addArticle(article));
+    this.formComponent.newArticle.subscribe(article => this.newArticle.emit(article));
   }
 
-  addArticle(article: {author: string, title: string, category: string, content: string}) {
-    this.newArticle.emit(article);
-  }
+
 }
