@@ -1,8 +1,8 @@
 <article>
-    <h2>{{title}}</h2>
-    <p>Категория: <strong>{{category}}</strong></p>
-    <p>Автор: <strong>{{author}}</strong></p>
-    <p>{{content}}</p>
+    <h2>{{article.title}}</h2>
+    <p>Категория: <strong>{{article.category}}</strong></p>
+    <p>Автор: <strong>{{article.author}}</strong></p>
+    <p>{{article.content}}</p>
     <div class="buttons">
         <button class="delete-button" (click)="deleteArticle.emit()">Удалить</button>
         <button class="archive-button" >Архивировать</button>

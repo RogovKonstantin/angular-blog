@@ -8,10 +8,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './article.component.scss'
 })
 export class ArticleComponent {
-  @Input() title: string = 'Default Title';
-  @Input() category: string = 'Default Category';
-  @Input() author: string = 'Default Author';
-  @Input() content: string = 'Default Content';
+    @Input() article = {
+      title: 'Default Title',
+      category: 'Default Category',
+      author: 'Default Author',
+      content: 'Default Content',
+    };
   @Output() deleteArticle = new EventEmitter<void>();
 }
 

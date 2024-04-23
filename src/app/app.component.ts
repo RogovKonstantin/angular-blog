@@ -5,11 +5,12 @@ import { ArticleComponent } from './article/article.component';
 import { ArticleFormComponent } from './form/form.component';
 import { BoxComponent } from './box/box.component';
 import { BoxWithFormComponent } from './box-with-form/box-with-form.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, ArticleComponent,ArticleFormComponent,BoxComponent,BoxWithFormComponent],
+  imports: [RouterOutlet, HeaderComponent, ArticleComponent,ArticleFormComponent,BoxComponent,BoxWithFormComponent,ArchiveComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
