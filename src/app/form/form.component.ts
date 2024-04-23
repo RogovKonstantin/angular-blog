@@ -1,10 +1,11 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-article-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,NgIf],
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
 })
@@ -12,14 +13,19 @@ import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 export class ArticleFormComponent {
   @Output() newArticle = new EventEmitter<{author: string, title: string, category: string, content: string}>();
 
+  
+  
   article = new FormGroup({
-    author: new FormControl(''),
-    title: new FormControl(''),
-    category: new FormControl(''),
-    content: new FormControl('')
+    author: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Zа-яА-Я]*$/)]),
+    title: new FormControl('', Validators.required),
+    category: new FormControl('', Validators.required),
+    content: new FormControl('', Validators.required)
   });
+  
+  
 
   onSubmit() {
+    
     const { author, title, category, content } = this.article.value;
     const articleData = {
       author: author || '',
@@ -27,6 +33,7 @@ export class ArticleFormComponent {
       category: category || '',
       content: content || ''
     };
+    
     this.newArticle.emit(articleData);
     this.article.reset();
   }

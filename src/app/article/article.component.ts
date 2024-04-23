@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-article',
@@ -12,4 +12,7 @@ export class ArticleComponent {
   @Input() category: string = 'Default Category';
   @Input() author: string = 'Default Author';
   @Input() content: string = 'Default Content';
+
+  @Output() deleteArticle = new EventEmitter<void>();
 }
+

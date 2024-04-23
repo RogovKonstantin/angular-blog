@@ -12,5 +12,7 @@ import { NgFor } from '@angular/common';
 })
 export class BoxComponent {
   @Input() articles: Array<{ author: string, title: string, category: string, content: string }> = [];
-  
+  onDeleteArticle(index: number) {
+    this.articles.splice(index, 1);
+  }
 }

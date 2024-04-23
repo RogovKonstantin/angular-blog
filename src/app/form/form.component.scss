@@ -11,6 +11,9 @@ button:focus {
     background-color: #07b148;
   }
   
+  .validation-message {
+    color: red;
+}
 
   input, textarea {
     display: block;

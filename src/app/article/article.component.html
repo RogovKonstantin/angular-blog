@@ -4,7 +4,7 @@
     <p>Автор: <strong>{{author}}</strong></p>
     <p>{{content}}</p>
     <div class="buttons">
-        <button class="delete-button">Удалить</button>
+        <button class="delete-button" (click)="deleteArticle.emit()">Удалить</button>
         <button class="archive-button">Архив</button>
     </div>
 </article>
