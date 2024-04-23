@@ -12,7 +12,6 @@ export class ArticleComponent {
   @Input() category: string = 'Default Category';
   @Input() author: string = 'Default Author';
   @Input() content: string = 'Default Content';
-
   @Output() deleteArticle = new EventEmitter<void>();
 }
 
