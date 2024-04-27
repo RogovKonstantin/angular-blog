@@ -1,6 +1,8 @@
-
-
-  
+.archive {
+  overflow: auto;
+  min-height: 10vh;
+  max-height: 10vh;
+}
 
   :host ::ng-deep app-header .header {
     color: black;
@@ -9,3 +11,8 @@
     font-size: 2.3rem;
     padding-left: 0;
 }
+
+ul li {
+  list-style-type: square;
+}
+

@@ -20,4 +20,5 @@ export class BoxComponent {
 onArchive(index: number) {
     this.archiveArticle.emit(index);
 }
+
 }
