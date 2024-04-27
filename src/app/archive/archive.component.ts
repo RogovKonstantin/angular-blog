@@ -12,6 +12,6 @@ import { ArticleComponent } from '../article/article.component';
 })
 
 export class ArchiveComponent {
-
+  @Input() articles: Array<{ author: string, title: string, category: string, content: string }> = [];
 }
 

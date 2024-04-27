@@ -17,9 +17,14 @@ import { ArchiveComponent } from './archive/archive.component';
 export class AppComponent {
   title = 'blog';
   articles: Array<{author: string, title: string, category: string, content: string}> = [];
+  archivedArticles: Array<{author: string, title: string, category: string, content: string}> = [];
 
 onNewArticle(article: {author: string, title: string, category: string, content: string}) {
   this.articles.push(article);
+}
+onArchiveArticle(index: number) {
+  this.archivedArticles.push(this.articles[index]);
+  this.articles.splice(index, 1);
 }
 }
 

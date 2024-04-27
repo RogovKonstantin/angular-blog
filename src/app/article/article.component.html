@@ -5,6 +5,6 @@
     <p>{{article.content}}</p>
     <div class="buttons">
         <button class="delete-button" (click)="deleteArticle.emit()">Удалить</button>
-        <button class="archive-button" >Архивировать</button>
+        <button class="archive-button" (click)="onArchive()">Archive</button>
     </div>
 </article>

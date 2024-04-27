@@ -2,10 +2,10 @@
   <app-header></app-header>
     <div class="page-contents">
       <div class = "main">
-        <app-box [articles]="articles"></app-box>
+        <app-box [articles]="articles" (archiveArticle)="onArchiveArticle($event)"></app-box>
   </div>
   <div class="aside">
   <app-box-with-form (newArticle)="onNewArticle($event)"></app-box-with-form>
-  <app-archive></app-archive>
+  <app-archive [articles]="archivedArticles"></app-archive>
   </div>
 </div>

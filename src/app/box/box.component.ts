@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { ArticleComponent } from '../article/article.component';
 import { NgFor } from '@angular/common';
@@ -15,4 +15,9 @@ export class BoxComponent {
   onDeleteArticle(index: number) {
     this.articles.splice(index, 1);
   }
+  @Output() archiveArticle = new EventEmitter<number>();
+
+onArchive(index: number) {
+    this.archiveArticle.emit(index);
+}
 }

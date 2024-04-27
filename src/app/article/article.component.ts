@@ -15,5 +15,9 @@ export class ArticleComponent {
       content: 'Default Content',
     };
   @Output() deleteArticle = new EventEmitter<void>();
+  @Output() archiveArticle = new EventEmitter<void>();
+  onArchive() {
+    this.archiveArticle.emit();
+}
 }
 
