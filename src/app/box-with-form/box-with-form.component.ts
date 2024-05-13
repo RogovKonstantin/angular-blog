@@ -10,18 +10,13 @@ import { BoxComponent } from '../box/box.component';
   imports: [ArticleFormComponent, HeaderComponent, BoxComponent],
   standalone: true
 })
+
 export class BoxWithFormComponent {
   @Output() newArticle = new EventEmitter<{author: string, title: string, category: string, content: string}>();
 
   @ViewChild(ArticleFormComponent) formComponent!: ArticleFormComponent;
 
-  constructor() {
-    this.formComponent = new ArticleFormComponent();
-  }
-
   ngAfterViewInit() {
     this.formComponent.newArticle.subscribe(article => this.newArticle.emit(article));
   }
-
-
 }

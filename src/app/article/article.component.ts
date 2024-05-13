@@ -8,7 +8,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './article.component.scss'
 })
 export class ArticleComponent {
-  
+
+  @Output() deleteArticle = new EventEmitter<void>();
+
+  @Output() archiveArticle = new EventEmitter<void>();
 
     @Input() article = {
       title: 'Default Title',
@@ -16,11 +19,11 @@ export class ArticleComponent {
       author: 'Default Author',
       content: 'Default Content',
     };
-  @Output() deleteArticle = new EventEmitter<void>();
-  @Output() archiveArticle = new EventEmitter<void>();
-  onArchive() {
+  
+onArchive() {
     this.archiveArticle.emit();
 }
+
 onDelete() {
   this.deleteArticle.emit();
 }

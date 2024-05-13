@@ -13,8 +13,6 @@ import { NgIf } from '@angular/common';
 export class ArticleFormComponent {
   @Output() newArticle = new EventEmitter<{author: string, title: string, category: string, content: string}>();
 
-  
-  
   article = new FormGroup({
     author: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Zа-яА-Я]*$/)]),
     title: new FormControl('', Validators.required),
@@ -22,10 +20,7 @@ export class ArticleFormComponent {
     content: new FormControl('', Validators.required)
   });
   
-  
-
   onSubmit() {
-    
     const { author, title, category, content } = this.article.value;
     const articleData = {
       author: author || '',
