@@ -1,4 +1,9 @@
 <div class="box">
-    <app-header [title]="'Записи'"></app-header>
-    <app-article *ngFor="let article of articles; index as i" [article]="article" (deleteArticle)="onDeleteArticle(i)" (archiveArticle)="onArchive(i)"></app-article>
+  <app-header [title]="'Записи'"></app-header>
+  <app-article
+    *ngFor="let article of articles; index as i"
+    [article]="article"
+    (deleteArticle)="onDeleteArticle(i)"
+    (archiveArticle)="onArchive(i)"
+  ></app-article>
 </div>

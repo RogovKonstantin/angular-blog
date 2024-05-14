@@ -1,30 +1,60 @@
-<form [formGroup]="article" (ngSubmit)="onSubmit()">
-    <label for="author">Автор</label>
-    <input type="text" id="author" formControlName="author" required>
-    <div class ="validation-message" *ngIf="article.controls.author.hasError('required') && article.controls.author.touched">
-        Поле "Автор" не должно быть пустым.
-    </div>
-    <div class ="validation-message" *ngIf="article.controls.author.hasError('pattern') && article.controls.author.touched">
-        Поле "Автор" должно содержать только буквы.
-    </div>
-    
-    <label for="title">Заголовок</label>
-    <input type="text" id="title" formControlName="title" required>
-    <div class ="validation-message" *ngIf="article.controls.title.invalid && article.controls.title.touched">
-        Поле "Заголовок" не должно быть пустым.
-    </div>
-    
-    <label for="category">Категория</label>
-    <input type="text" id="category" formControlName="category" required>
-    <div class ="validation-message" *ngIf="article.controls.category.invalid && article.controls.category.touched">
-        Поле "Категория" не должно быть пустым.
-    </div>
-    
-    <label for="content">Содержание</label>
-    <textarea id="content" formControlName="content" required></textarea>
-    <div class ="validation-message" *ngIf="article.controls.content.invalid && article.controls.content.touched ">
-        Поле "Содержание" не должно быть пустым.
-    </div>
-    
-    <button type="submit" [disabled]="article.invalid">Создать</button>
+<form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+  <label for="author">Автор</label>
+  <input type="text" id="author" formControlName="author" required />
+  <div
+    class="validation-message"
+    *ngIf="
+      articleForm.controls['author'].hasError('required') &&
+      articleForm.controls['author'].touched
+    "
+  >
+    Поле "Автор" не должно быть пустым.
+  </div>
+  <div
+    class="validation-message"
+    *ngIf="
+      articleForm.controls['author'].hasError('pattern') &&
+      articleForm.controls['author'].touched
+    "
+  >
+    Поле "Автор" должно содержать только буквы.
+  </div>
+
+  <label for="title">Заголовок</label>
+  <input type="text" id="title" formControlName="title" required />
+  <div
+    class="validation-message"
+    *ngIf="
+      articleForm.controls['title'].invalid &&
+      articleForm.controls['title'].touched
+    "
+  >
+    Поле "Заголовок" не должно быть пустым.
+  </div>
+
+  <label for="category">Категория</label>
+  <input type="text" id="category" formControlName="category" required />
+  <div
+    class="validation-message"
+    *ngIf="
+      articleForm.controls['category'].invalid &&
+      articleForm.controls['category'].touched
+    "
+  >
+    Поле "Категория" не должно быть пустым.
+  </div>
+
+  <label for="content">Содержание</label>
+  <textarea id="content" formControlName="content" required></textarea>
+  <div
+    class="validation-message"
+    *ngIf="
+      articleForm.controls['content'].invalid &&
+      articleForm.controls['content'].touched
+    "
+  >
+    Поле "Содержание" не должно быть пустым.
+  </div>
+
+  <button type="submit" [disabled]="articleForm.invalid">Создать</button>
 </form>

@@ -8,10 +8,9 @@ describe('BoxWithFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BoxWithFormComponent]
-    })
-    .compileComponents();
-    
+      imports: [BoxWithFormComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(BoxWithFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

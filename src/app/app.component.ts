@@ -6,25 +6,38 @@ import { ArticleFormComponent } from './form/form.component';
 import { BoxComponent } from './box/box.component';
 import { BoxWithFormComponent } from './box-with-form/box-with-form.component';
 import { ArchiveComponent } from './archive/archive.component';
+import { Article } from './types/article.type';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, ArticleComponent,ArticleFormComponent,BoxComponent,BoxWithFormComponent,ArchiveComponent],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    ArticleComponent,
+    ArticleFormComponent,
+    BoxComponent,
+    BoxWithFormComponent,
+    ArchiveComponent,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'blog';
-  articles: Array<{author: string, title: string, category: string, content: string}> = [];
-  archivedArticles: Array<{author: string, title: string, category: string, content: string}> = [];
+  articles: Article[] = [];
+  archivedArticles: Article[] = [];
 
-onNewArticle(article: {author: string, title: string, category: string, content: string}) {
-  this.articles.push(article);
+  onNewArticle(article: {
+    author: string;
+    title: string;
+    category: string;
+    content: string;
+  }) {
+    this.articles.push(article);
+  }
+  onArchiveArticle(index: number) {
+    this.archivedArticles.push(this.articles[index]);
+    this.articles.splice(index, 1);
+  }
 }
-onArchiveArticle(index: number) {
-  this.archivedArticles.push(this.articles[index]);
-  this.articles.splice(index, 1);
-}
-}
-
